@@ -3,6 +3,7 @@ package tokens
 import (
 	"encoding/binary"
 	"fmt"
+	"github.com/golang-jwt/jwt"
 	"strings"
 	"time"
 

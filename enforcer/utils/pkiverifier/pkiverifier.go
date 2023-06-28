@@ -8,6 +8,7 @@ import (
 	"math/big"
 	"time"
 
+	"github.com/golang-jwt/jwt"
 	"go.uber.org/zap"
 
 	"github.com/headingy/trireme/cache"

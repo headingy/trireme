@@ -2,6 +2,7 @@ package trireme
 
 import (
 	"fmt"
+	enforcerproxy "github.com/headingy/trireme/enforcer/proxy"
 
 	"go.uber.org/zap"
 

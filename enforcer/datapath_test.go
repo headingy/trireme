@@ -3,6 +3,8 @@ package enforcer
 import (
 	"encoding/binary"
 	"fmt"
+	mock_trireme "github.com/headingy/trireme/mock"
+	. "github.com/smartystreets/goconvey/convey"
 	"net"
 	"reflect"
 	"testing"

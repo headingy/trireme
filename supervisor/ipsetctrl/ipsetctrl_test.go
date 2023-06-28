@@ -2,6 +2,7 @@ package ipsetctrl
 
 import (
 	"fmt"
+	. "github.com/smartystreets/goconvey/convey"
 	"testing"
 
 	"github.com/bvandewalle/go-ipset/ipset"

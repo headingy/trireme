@@ -8,8 +8,8 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/aporeto-inc/trireme/collector"
-	"github.com/aporeto-inc/trireme/enforcer/utils/rpcwrapper"
+	"github.com/headingy/trireme/collector"
+	"github.com/headingy/trireme/enforcer/utils/rpcwrapper"
 )
 
 const (
@@ -20,8 +20,8 @@ const (
 	statsRPCCommand                 = "StatsServer.GetStats"
 )
 
-//StatsClient  This is the struct for storing state for the rpc client
-//which reports flow stats back to the controller process
+// StatsClient  This is the struct for storing state for the rpc client
+// which reports flow stats back to the controller process
 type StatsClient struct {
 	collector     *CollectorImpl
 	rpchdl        *rpcwrapper.RPCWrapper
@@ -60,7 +60,7 @@ func NewStatsClient() (Stats, error) {
 	}, nil
 }
 
-//SendStats  async function which makes a rpc call to send stats every STATS_INTERVAL
+// SendStats  async function which makes a rpc call to send stats every STATS_INTERVAL
 func (s *StatsClient) SendStats() {
 
 	ticker := time.NewTicker(s.statsInterval)

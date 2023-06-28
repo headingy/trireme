@@ -3,9 +3,7 @@ package policy
 import (
 	"testing"
 
-	. "github.com/smartystreets/goconvey/convey"
-
-	"github.com/aporeto-inc/trireme/constants"
+	"github.com/headingy/trireme/constants"
 )
 
 func TestNewPURunTime(t *testing.T) {

@@ -8,11 +8,11 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/aporeto-inc/trireme/collector"
-	"github.com/aporeto-inc/trireme/monitor"
-	"github.com/aporeto-inc/trireme/monitor/contextstore"
-	"github.com/aporeto-inc/trireme/monitor/linuxmonitor/cgnetcls"
-	"github.com/aporeto-inc/trireme/monitor/rpcmonitor"
+	"github.com/headingy/trireme/collector"
+	"github.com/headingy/trireme/monitor"
+	"github.com/headingy/trireme/monitor/contextstore"
+	"github.com/headingy/trireme/monitor/linuxmonitor/cgnetcls"
+	"github.com/headingy/trireme/monitor/rpcmonitor"
 )
 
 // LinuxProcessor captures all the monitor processor information

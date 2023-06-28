@@ -1,7 +1,7 @@
 package enforcer
 
 import (
-	"github.com/aporeto-inc/trireme/policy"
+	"github.com/headingy/trireme/policy"
 )
 
 type nfLogger interface {

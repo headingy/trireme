@@ -1,3 +1,4 @@
+//go:build linux
 // +build linux
 
 package remoteenforcer
@@ -24,14 +25,14 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/aporeto-inc/trireme/configurator"
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/enforcer"
-	_ "github.com/aporeto-inc/trireme/enforcer/utils/nsenter" // nolint
-	"github.com/aporeto-inc/trireme/enforcer/utils/rpcwrapper"
-	"github.com/aporeto-inc/trireme/enforcer/utils/secrets"
-	"github.com/aporeto-inc/trireme/policy"
-	"github.com/aporeto-inc/trireme/supervisor"
+	"github.com/headingy/trireme/configurator"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/enforcer"
+	_ "github.com/headingy/trireme/enforcer/utils/nsenter" // nolint
+	"github.com/headingy/trireme/enforcer/utils/rpcwrapper"
+	"github.com/headingy/trireme/enforcer/utils/secrets"
+	"github.com/headingy/trireme/policy"
+	"github.com/headingy/trireme/supervisor"
 )
 
 const (
@@ -281,7 +282,7 @@ func (s *Server) InitSupervisor(req rpcwrapper.Request, resp *rpcwrapper.Respons
 	return nil
 }
 
-//Supervise This method calls the supervisor method on the supervisor created during initsupervisor
+// Supervise This method calls the supervisor method on the supervisor created during initsupervisor
 func (s *Server) Supervise(req rpcwrapper.Request, resp *rpcwrapper.Response) error {
 
 	if !s.rpchdl.CheckValidity(&req, s.rpcSecret) {
@@ -328,7 +329,7 @@ func (s *Server) Supervise(req rpcwrapper.Request, resp *rpcwrapper.Response) er
 
 }
 
-//Unenforce this method calls the unenforce method on the enforcer created from initenforcer
+// Unenforce this method calls the unenforce method on the enforcer created from initenforcer
 func (s *Server) Unenforce(req rpcwrapper.Request, resp *rpcwrapper.Response) error {
 
 	if !s.rpchdl.CheckValidity(&req, s.rpcSecret) {
@@ -343,7 +344,7 @@ func (s *Server) Unenforce(req rpcwrapper.Request, resp *rpcwrapper.Response) er
 	return s.Enforcer.Unenforce(payload.ContextID)
 }
 
-//Unsupervise This method calls the unsupervise method on the supervisor created during initsupervisor
+// Unsupervise This method calls the unsupervise method on the supervisor created during initsupervisor
 func (s *Server) Unsupervise(req rpcwrapper.Request, resp *rpcwrapper.Response) error {
 
 	if !s.rpchdl.CheckValidity(&req, s.rpcSecret) {
@@ -358,7 +359,7 @@ func (s *Server) Unsupervise(req rpcwrapper.Request, resp *rpcwrapper.Response) 
 	return s.Supervisor.Unsupervise(payload.ContextID)
 }
 
-//Enforce this method calls the enforce method on the enforcer created during initenforcer
+// Enforce this method calls the enforce method on the enforcer created during initenforcer
 func (s *Server) Enforce(req rpcwrapper.Request, resp *rpcwrapper.Response) error {
 
 	if !s.rpchdl.CheckValidity(&req, s.rpcSecret) {

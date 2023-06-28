@@ -11,19 +11,14 @@ import (
 	"github.com/cnf/structhash"
 
 	gomock "github.com/aporeto-inc/mock/gomock"
-	"github.com/aporeto-inc/trireme/cmd/remoteenforcer/mock"
-	"github.com/aporeto-inc/trireme/collector"
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/enforcer"
-	"github.com/aporeto-inc/trireme/enforcer/mock"
-	"github.com/aporeto-inc/trireme/enforcer/utils/fqconfig"
-	"github.com/aporeto-inc/trireme/enforcer/utils/rpcwrapper"
-	"github.com/aporeto-inc/trireme/enforcer/utils/rpcwrapper/mock"
-	"github.com/aporeto-inc/trireme/enforcer/utils/secrets"
-	"github.com/aporeto-inc/trireme/policy"
-	"github.com/aporeto-inc/trireme/supervisor"
-	"github.com/aporeto-inc/trireme/supervisor/mock"
-	. "github.com/smartystreets/goconvey/convey"
+	"github.com/headingy/trireme/collector"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/enforcer"
+	"github.com/headingy/trireme/enforcer/utils/fqconfig"
+	"github.com/headingy/trireme/enforcer/utils/rpcwrapper"
+	"github.com/headingy/trireme/enforcer/utils/secrets"
+	"github.com/headingy/trireme/policy"
+	"github.com/headingy/trireme/supervisor"
 )
 
 var (

@@ -5,8 +5,8 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/aporeto-inc/trireme/policy"
 	"github.com/bvandewalle/go-ipset/ipset"
+	"github.com/headingy/trireme/policy"
 )
 
 const (
@@ -182,7 +182,7 @@ func (i *Instance) deleteNetSetRules(version, setPrefix, ip string) error {
 	return nil
 }
 
-//deleteSet deletes the ipset
+// deleteSet deletes the ipset
 func (i *Instance) deleteSet(set string) error {
 
 	ipSet, err := i.ips.NewIpset(set, "hash:net,port", &ipset.Params{})

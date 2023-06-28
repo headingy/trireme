@@ -3,7 +3,7 @@ package remoteenforcer
 import (
 	"sync"
 
-	"github.com/aporeto-inc/trireme/collector"
+	"github.com/headingy/trireme/collector"
 )
 
 // CollectorImpl : This is a local implementation for the collector interface
@@ -44,6 +44,6 @@ func (c *CollectorImpl) CollectFlowEvent(record *collector.FlowRecord) {
 	c.Flows[hash].Tags = record.Tags
 }
 
-//CollectContainerEvent exported
-//This event should not be expected here in the enforcer process inside a particular container context
+// CollectContainerEvent exported
+// This event should not be expected here in the enforcer process inside a particular container context
 func (c *CollectorImpl) CollectContainerEvent(record *collector.ContainerRecord) {}

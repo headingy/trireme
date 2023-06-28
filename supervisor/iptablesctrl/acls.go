@@ -7,9 +7,9 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/enforcer/utils/packet"
-	"github.com/aporeto-inc/trireme/policy"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/enforcer/utils/packet"
+	"github.com/headingy/trireme/policy"
 )
 
 func (i *Instance) cgroupChainRules(appChain string, netChain string, mark string, port string) [][]string {
@@ -80,7 +80,7 @@ func (i *Instance) chainRules(appChain string, netChain string, ip string) [][]s
 
 }
 
-//trapRules provides the packet trap rules to add/delete
+// trapRules provides the packet trap rules to add/delete
 func (i *Instance) trapRules(appChain string, netChain string) [][]string {
 
 	rules := [][]string{}

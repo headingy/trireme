@@ -4,15 +4,15 @@ import (
 	"sync"
 	"time"
 
-	"github.com/aporeto-inc/trireme/cache"
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/enforcer/acls"
-	"github.com/aporeto-inc/trireme/enforcer/lookup"
-	"github.com/aporeto-inc/trireme/enforcer/utils/fqconfig"
-	"github.com/aporeto-inc/trireme/enforcer/utils/packet"
-	"github.com/aporeto-inc/trireme/enforcer/utils/secrets"
-	"github.com/aporeto-inc/trireme/enforcer/utils/tokens"
-	"github.com/aporeto-inc/trireme/policy"
+	"github.com/headingy/trireme/cache"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/enforcer/acls"
+	"github.com/headingy/trireme/enforcer/lookup"
+	"github.com/headingy/trireme/enforcer/utils/fqconfig"
+	"github.com/headingy/trireme/enforcer/utils/packet"
+	"github.com/headingy/trireme/enforcer/utils/secrets"
+	"github.com/headingy/trireme/enforcer/utils/tokens"
+	"github.com/headingy/trireme/policy"
 )
 
 // A PolicyEnforcer is implementing the enforcer that will modify//analyze the capture packets

@@ -12,8 +12,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/aporeto-inc/trireme/cache"
-	"github.com/aporeto-inc/trireme/enforcer/utils/rpcwrapper"
+	"github.com/headingy/trireme/cache"
+	"github.com/headingy/trireme/enforcer/utils/rpcwrapper"
 )
 
 func LaunchContainer() int {

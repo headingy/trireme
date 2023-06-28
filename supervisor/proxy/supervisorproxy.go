@@ -6,18 +6,18 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/aporeto-inc/trireme/cache"
-	"github.com/aporeto-inc/trireme/collector"
-	"github.com/aporeto-inc/trireme/enforcer"
-	"github.com/aporeto-inc/trireme/enforcer/utils/fqconfig"
-	"github.com/aporeto-inc/trireme/enforcer/utils/rpcwrapper"
+	"github.com/headingy/trireme/cache"
+	"github.com/headingy/trireme/collector"
+	"github.com/headingy/trireme/enforcer"
+	"github.com/headingy/trireme/enforcer/utils/fqconfig"
+	"github.com/headingy/trireme/enforcer/utils/rpcwrapper"
 
-	"github.com/aporeto-inc/trireme/policy"
-	"github.com/aporeto-inc/trireme/processmon"
+	"github.com/headingy/trireme/policy"
+	"github.com/headingy/trireme/processmon"
 )
 
-//ProxyInfo is a struct used to store state for the remote launcher.
-//it mirrors what is stored by the supervisor and also information to talk with the
+// ProxyInfo is a struct used to store state for the remote launcher.
+// it mirrors what is stored by the supervisor and also information to talk with the
 // remote enforcer
 type ProxyInfo struct {
 	versionTracker cache.DataStore
@@ -31,7 +31,7 @@ type ProxyInfo struct {
 	sync.Mutex
 }
 
-//Supervise Calls Supervise on the remote supervisor
+// Supervise Calls Supervise on the remote supervisor
 func (s *ProxyInfo) Supervise(contextID string, puInfo *policy.PUInfo) error {
 
 	s.Lock()
@@ -112,7 +112,7 @@ func (s *ProxyInfo) Start() error {
 	return nil
 }
 
-//Stop This method does nothing
+// Stop This method does nothing
 func (s *ProxyInfo) Stop() error {
 	for c := range s.initDone {
 		s.Unsupervise(c) // nolint
@@ -144,7 +144,7 @@ func NewProxySupervisor(collector collector.EventCollector, enforcer enforcer.Po
 
 }
 
-//InitRemoteSupervisor calls initsupervisor method on the remote
+// InitRemoteSupervisor calls initsupervisor method on the remote
 func (s *ProxyInfo) InitRemoteSupervisor(contextID string, puInfo *policy.PUInfo) error {
 
 	request := &rpcwrapper.Request{
@@ -166,7 +166,7 @@ func (s *ProxyInfo) InitRemoteSupervisor(contextID string, puInfo *policy.PUInfo
 
 }
 
-//AddExcludedIPs call addexcluded ip on the remote supervisor
+// AddExcludedIPs call addexcluded ip on the remote supervisor
 func (s *ProxyInfo) AddExcludedIPs(ips []string) error {
 	s.ExcludedIPs = ips
 	request := &rpcwrapper.Request{

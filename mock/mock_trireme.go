@@ -5,9 +5,9 @@
 package mock_trireme
 
 import (
-	"github.com/aporeto-inc/trireme/monitor"
-	policy "github.com/aporeto-inc/trireme/policy"
 	gomock "github.com/golang/mock/gomock"
+	"github.com/headingy/trireme/monitor"
+	policy "github.com/headingy/trireme/policy"
 )
 
 // Mock of Monitor interface

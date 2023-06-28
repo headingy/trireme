@@ -6,12 +6,10 @@ import (
 	"testing"
 
 	"github.com/bvandewalle/go-ipset/ipset"
-	. "github.com/smartystreets/goconvey/convey"
-
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/enforcer/utils/fqconfig"
-	"github.com/aporeto-inc/trireme/policy"
-	"github.com/aporeto-inc/trireme/supervisor/provider"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/enforcer/utils/fqconfig"
+	"github.com/headingy/trireme/policy"
+	"github.com/headingy/trireme/supervisor/provider"
 )
 
 func matchSpec(term string, rulespec []string) error {

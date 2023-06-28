@@ -6,12 +6,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/aporeto-inc/trireme/cache"
-	"github.com/aporeto-inc/trireme/crypto"
-	"github.com/aporeto-inc/trireme/enforcer/utils/secrets"
+	"github.com/headingy/trireme/cache"
+	"github.com/headingy/trireme/crypto"
+	"github.com/headingy/trireme/enforcer/utils/secrets"
 	"go.uber.org/zap"
-
-	"github.com/dgrijalva/jwt-go"
 )
 
 var (

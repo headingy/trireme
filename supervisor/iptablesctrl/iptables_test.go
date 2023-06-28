@@ -4,11 +4,10 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/enforcer/utils/fqconfig"
-	"github.com/aporeto-inc/trireme/policy"
-	"github.com/aporeto-inc/trireme/supervisor/provider"
-	. "github.com/smartystreets/goconvey/convey"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/enforcer/utils/fqconfig"
+	"github.com/headingy/trireme/policy"
+	"github.com/headingy/trireme/supervisor/provider"
 )
 
 func TestNewInstance(t *testing.T) {

@@ -3,10 +3,10 @@ package rpcwrapper
 import (
 	"time"
 
-	"github.com/aporeto-inc/trireme/collector"
-	"github.com/aporeto-inc/trireme/enforcer/utils/fqconfig"
-	"github.com/aporeto-inc/trireme/enforcer/utils/secrets"
-	"github.com/aporeto-inc/trireme/policy"
+	"github.com/headingy/trireme/collector"
+	"github.com/headingy/trireme/enforcer/utils/fqconfig"
+	"github.com/headingy/trireme/enforcer/utils/secrets"
+	"github.com/headingy/trireme/policy"
 )
 
 // CaptureType identifies the type of iptables implementation that should be used
@@ -19,25 +19,25 @@ const (
 	IPSets
 )
 
-//Request exported
+// Request exported
 type Request struct {
 	HashAuth []byte
 	Payload  interface{}
 }
 
-//exported consts from the package
+// exported consts from the package
 const (
 	SUCCESS      = 0
 	StatsChannel = "/var/run/statschannel.sock"
 )
 
-//Response is the response for every RPC call. This is used to carry the status of the actual function call
-//made on the remote end
+// Response is the response for every RPC call. This is used to carry the status of the actual function call
+// made on the remote end
 type Response struct {
 	Status string
 }
 
-//InitRequestPayload Payload for enforcer init request
+// InitRequestPayload Payload for enforcer init request
 type InitRequestPayload struct {
 	FqConfig   *fqconfig.FilterQueue      `json:",omitempty"`
 	MutualAuth bool                       `json:",omitempty"`
@@ -50,7 +50,7 @@ type InitRequestPayload struct {
 	Token      []byte                     `json:",omitempty"`
 }
 
-//InitSupervisorPayload for supervisor init request
+// InitSupervisorPayload for supervisor init request
 type InitSupervisorPayload struct {
 	TriremeNetworks []string    `json:",omitempty"`
 	CaptureMethod   CaptureType `json:",omitempty"`
@@ -72,7 +72,7 @@ type EnforcePayload struct {
 	ExcludedNetworks []string               `json:",omitempty"`
 }
 
-//SuperviseRequestPayload for Supervise request
+// SuperviseRequestPayload for Supervise request
 type SuperviseRequestPayload struct {
 	ContextID        string                 `json:",omitempty"`
 	ManagementID     string                 `json:",omitempty"`
@@ -88,42 +88,42 @@ type SuperviseRequestPayload struct {
 	TriremeNetworks  []string               `json:",omitempty"`
 }
 
-//UnEnforcePayload payload for unenforce request
+// UnEnforcePayload payload for unenforce request
 type UnEnforcePayload struct {
 	ContextID string `json:",omitempty"`
 }
 
-//UnSupervisePayload payload for unsupervise request
+// UnSupervisePayload payload for unsupervise request
 type UnSupervisePayload struct {
 	ContextID string `json:",omitempty"`
 }
 
-//InitResponsePayload Response payload
+// InitResponsePayload Response payload
 type InitResponsePayload struct {
 	Status int `json:",omitempty"`
 }
 
-//EnforceResponsePayload exported
+// EnforceResponsePayload exported
 type EnforceResponsePayload struct {
 	Status int `json:",omitempty"`
 }
 
-//SuperviseResponsePayload exported
+// SuperviseResponsePayload exported
 type SuperviseResponsePayload struct {
 	Status int `json:",omitempty"`
 }
 
-//UnEnforceResponsePayload exported
+// UnEnforceResponsePayload exported
 type UnEnforceResponsePayload struct {
 	Status int `json:",omitempty"`
 }
 
-//StatsPayload is the payload carries by the stats reporting form the remote enforcer
+// StatsPayload is the payload carries by the stats reporting form the remote enforcer
 type StatsPayload struct {
 	Flows map[string]*collector.FlowRecord `json:",omitempty"`
 }
 
-//ExcludeIPRequestPayload carries the list of excluded ips
+// ExcludeIPRequestPayload carries the list of excluded ips
 type ExcludeIPRequestPayload struct {
 	IPs []string `json:",omitempty"`
 }

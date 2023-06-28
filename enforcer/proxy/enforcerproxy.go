@@ -11,29 +11,29 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/aporeto-inc/trireme/collector"
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/crypto"
-	"github.com/aporeto-inc/trireme/enforcer"
-	"github.com/aporeto-inc/trireme/enforcer/utils/fqconfig"
-	"github.com/aporeto-inc/trireme/enforcer/utils/rpcwrapper"
-	"github.com/aporeto-inc/trireme/enforcer/utils/secrets"
-	"github.com/aporeto-inc/trireme/policy"
-	"github.com/aporeto-inc/trireme/processmon"
+	"github.com/headingy/trireme/collector"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/crypto"
+	"github.com/headingy/trireme/enforcer"
+	"github.com/headingy/trireme/enforcer/utils/fqconfig"
+	"github.com/headingy/trireme/enforcer/utils/rpcwrapper"
+	"github.com/headingy/trireme/enforcer/utils/secrets"
+	"github.com/headingy/trireme/policy"
+	"github.com/headingy/trireme/processmon"
 )
 
-//keyPEM is a private interface required by the enforcerlauncher to expose method not exposed by the
-//PolicyEnforcer interface
+// keyPEM is a private interface required by the enforcerlauncher to expose method not exposed by the
+// PolicyEnforcer interface
 type keyPEM interface {
 	AuthPEM() []byte
 	TransmittedPEM() []byte
 	EncodingPEM() []byte
 }
 
-//ErrFailedtoLaunch exported
+// ErrFailedtoLaunch exported
 var ErrFailedtoLaunch = errors.New("Failed to Launch")
 
-//ErrExpectedEnforcer exported
+// ErrExpectedEnforcer exported
 var ErrExpectedEnforcer = errors.New("Process was not launched")
 
 // ErrEnforceFailed exported
@@ -42,7 +42,7 @@ var ErrEnforceFailed = errors.New("Failed to enforce rules")
 // ErrInitFailed exported
 var ErrInitFailed = errors.New("Failed remote Init")
 
-//ProxyInfo is the struct used to hold state about active enforcers in the system
+// ProxyInfo is the struct used to hold state about active enforcers in the system
 type ProxyInfo struct {
 	MutualAuth        bool
 	Secrets           secrets.Secrets
@@ -59,7 +59,7 @@ type ProxyInfo struct {
 	sync.Mutex
 }
 
-//InitRemoteEnforcer method makes a RPC call to the remote enforcer
+// InitRemoteEnforcer method makes a RPC call to the remote enforcer
 func (s *ProxyInfo) InitRemoteEnforcer(contextID string) error {
 
 	resp := &rpcwrapper.Response{}
@@ -91,7 +91,7 @@ func (s *ProxyInfo) InitRemoteEnforcer(contextID string) error {
 	return nil
 }
 
-//Enforce method makes a RPC call for the remote enforcer enforce emthod
+// Enforce method makes a RPC call for the remote enforcer enforce emthod
 func (s *ProxyInfo) Enforce(contextID string, puInfo *policy.PUInfo) error {
 
 	zap.L().Debug("PID of container", zap.Int("pid", puInfo.Runtime.Pid()))
@@ -168,7 +168,7 @@ func (s *ProxyInfo) Stop() error {
 	return nil
 }
 
-//NewProxyEnforcer creates a new proxy to remote enforcers
+// NewProxyEnforcer creates a new proxy to remote enforcers
 func NewProxyEnforcer(mutualAuth bool,
 	filterQueue *fqconfig.FilterQueue,
 	collector collector.EventCollector,
@@ -240,14 +240,14 @@ func NewDefaultProxyEnforcer(serverID string,
 	)
 }
 
-//StatsServer This struct is a receiver for Statsserver and maintains a handle to the RPC StatsServer
+// StatsServer This struct is a receiver for Statsserver and maintains a handle to the RPC StatsServer
 type StatsServer struct {
 	collector collector.EventCollector
 	rpchdl    rpcwrapper.RPCServer
 	secret    string
 }
 
-//GetStats  is the function called from the remoteenforcer when it has new flow events to publish
+// GetStats  is the function called from the remoteenforcer when it has new flow events to publish
 func (r *StatsServer) GetStats(req rpcwrapper.Request, resp *rpcwrapper.Response) error {
 
 	if !r.rpchdl.ProcessMessage(&req, r.secret) {

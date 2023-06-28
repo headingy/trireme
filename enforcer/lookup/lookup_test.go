@@ -3,8 +3,7 @@ package lookup
 import (
 	"testing"
 
-	"github.com/aporeto-inc/trireme/policy"
-	. "github.com/smartystreets/goconvey/convey"
+	"github.com/headingy/trireme/policy"
 )
 
 var (

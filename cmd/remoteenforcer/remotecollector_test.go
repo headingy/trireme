@@ -3,9 +3,8 @@ package remoteenforcer
 import (
 	"testing"
 
-	"github.com/aporeto-inc/trireme/collector"
-	"github.com/aporeto-inc/trireme/policy"
-	. "github.com/smartystreets/goconvey/convey"
+	"github.com/headingy/trireme/collector"
+	"github.com/headingy/trireme/policy"
 )
 
 func TestNewCollector(t *testing.T) {

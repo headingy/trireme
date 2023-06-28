@@ -5,12 +5,11 @@ import (
 	"testing"
 
 	gomock "github.com/aporeto-inc/mock/gomock"
-	"github.com/aporeto-inc/trireme/collector"
-	"github.com/aporeto-inc/trireme/enforcer/utils/fqconfig"
-	mockrpcwrapper "github.com/aporeto-inc/trireme/enforcer/utils/rpcwrapper/mock"
-	"github.com/aporeto-inc/trireme/enforcer/utils/secrets"
-	"github.com/aporeto-inc/trireme/policy"
-	. "github.com/smartystreets/goconvey/convey"
+	"github.com/headingy/trireme/collector"
+	"github.com/headingy/trireme/enforcer/utils/fqconfig"
+	mockrpcwrapper "github.com/headingy/trireme/enforcer/utils/rpcwrapper/mock"
+	"github.com/headingy/trireme/enforcer/utils/secrets"
+	"github.com/headingy/trireme/policy"
 )
 
 const procMountPoint = "/proc"

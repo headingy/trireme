@@ -1,3 +1,4 @@
+//go:build linux
 // +build linux
 
 package enforcer
@@ -7,8 +8,8 @@ import (
 	"strings"
 
 	"github.com/aporeto-inc/netlink-go/nflog"
-	"github.com/aporeto-inc/trireme/collector"
-	"github.com/aporeto-inc/trireme/policy"
+	"github.com/headingy/trireme/collector"
+	"github.com/headingy/trireme/policy"
 
 	"go.uber.org/zap"
 )

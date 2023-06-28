@@ -8,10 +8,9 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/dgrijalva/jwt-go"
 	"go.uber.org/zap"
 
-	"github.com/aporeto-inc/trireme/cache"
+	"github.com/headingy/trireme/cache"
 )
 
 const (

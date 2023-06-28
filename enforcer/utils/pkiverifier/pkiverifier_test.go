@@ -5,8 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/aporeto-inc/trireme/crypto"
-	. "github.com/smartystreets/goconvey/convey"
+	"github.com/headingy/trireme/crypto"
 )
 
 var (

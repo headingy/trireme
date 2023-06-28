@@ -14,9 +14,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/monitor"
-	"github.com/aporeto-inc/trireme/monitor/rpcmonitor"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/monitor"
+	"github.com/headingy/trireme/monitor/rpcmonitor"
 )
 
 const (

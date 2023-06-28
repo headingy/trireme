@@ -1,6 +1,6 @@
 package policy
 
-import "github.com/aporeto-inc/trireme/constants"
+import "github.com/headingy/trireme/constants"
 
 // PUInfo  captures all policy information related to a connection
 type PUInfo struct {

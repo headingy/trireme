@@ -1,8 +1,8 @@
 package processmon
 
-import "github.com/aporeto-inc/trireme/enforcer/utils/rpcwrapper"
+import "github.com/headingy/trireme/enforcer/utils/rpcwrapper"
 
-//ProcessManager interface exposes methods required by a processmonitor
+// ProcessManager interface exposes methods required by a processmonitor
 type ProcessManager interface {
 	GetExitStatus(contextID string) bool
 	SetExitStatus(contextID string, status bool) error

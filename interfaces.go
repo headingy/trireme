@@ -1,10 +1,10 @@
 package trireme
 
 import (
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/monitor"
-	"github.com/aporeto-inc/trireme/policy"
-	"github.com/aporeto-inc/trireme/supervisor"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/monitor"
+	"github.com/headingy/trireme/policy"
+	"github.com/headingy/trireme/supervisor"
 )
 
 // Trireme is the main interface to the Trireme package.

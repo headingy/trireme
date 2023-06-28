@@ -6,15 +6,15 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/aporeto-inc/trireme/cache"
-	"github.com/aporeto-inc/trireme/collector"
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/enforcer"
-	"github.com/aporeto-inc/trireme/enforcer/utils/fqconfig"
-	"github.com/aporeto-inc/trireme/monitor/linuxmonitor/cgnetcls"
-	"github.com/aporeto-inc/trireme/policy"
-	"github.com/aporeto-inc/trireme/supervisor/ipsetctrl"
-	"github.com/aporeto-inc/trireme/supervisor/iptablesctrl"
+	"github.com/headingy/trireme/cache"
+	"github.com/headingy/trireme/collector"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/enforcer"
+	"github.com/headingy/trireme/enforcer/utils/fqconfig"
+	"github.com/headingy/trireme/monitor/linuxmonitor/cgnetcls"
+	"github.com/headingy/trireme/policy"
+	"github.com/headingy/trireme/supervisor/ipsetctrl"
+	"github.com/headingy/trireme/supervisor/iptablesctrl"
 )
 
 type cacheData struct {
@@ -210,7 +210,7 @@ func (s *Config) doCreatePU(contextID string, containerInfo *policy.PUInfo) erro
 }
 
 // UpdatePU creates a mapping between an IP address and the corresponding labels
-//and the invokes the various handlers that process all policies.
+// and the invokes the various handlers that process all policies.
 func (s *Config) doUpdatePU(contextID string, containerInfo *policy.PUInfo) error {
 
 	cacheEntry, err := s.versionTracker.LockedModify(contextID, add, 1)

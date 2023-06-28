@@ -18,8 +18,8 @@ import (
 
 	"net/rpc"
 
-	"github.com/aporeto-inc/trireme/cache"
 	"github.com/cnf/structhash"
+	"github.com/headingy/trireme/cache"
 )
 
 // RPCHdl is a per client handle
@@ -123,13 +123,13 @@ func (r *RPCWrapper) CheckValidity(req *Request, secret string) bool {
 	return hmac.Equal(req.HashAuth, digest.Sum(nil))
 }
 
-//NewRPCServer returns an interface RPCServer
+// NewRPCServer returns an interface RPCServer
 func NewRPCServer() RPCServer {
 
 	return &RPCWrapper{}
 }
 
-//StartServer Starts a server and waits for new connections this function never returns
+// StartServer Starts a server and waits for new connections this function never returns
 func (r *RPCWrapper) StartServer(protocol string, path string, handler interface{}) error {
 
 	if len(path) == 0 {

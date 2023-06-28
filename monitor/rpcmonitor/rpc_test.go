@@ -10,12 +10,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/monitor"
-	"github.com/aporeto-inc/trireme/monitor/contextstore"
-	"github.com/aporeto-inc/trireme/monitor/contextstore/mock"
 	"github.com/golang/mock/gomock"
-	. "github.com/smartystreets/goconvey/convey"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/monitor"
+	"github.com/headingy/trireme/monitor/contextstore"
 )
 
 // Util functions to start test RPC server

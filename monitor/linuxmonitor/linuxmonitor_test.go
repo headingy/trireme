@@ -1,3 +1,4 @@
+//go:build linux
 // +build linux
 
 package linuxmonitor
@@ -7,8 +8,7 @@ import (
 	"net"
 	"testing"
 
-	"github.com/aporeto-inc/trireme/monitor/rpcmonitor"
-	. "github.com/smartystreets/goconvey/convey"
+	"github.com/headingy/trireme/monitor/rpcmonitor"
 )
 
 func TestSystemRPCMetadataExtractor(t *testing.T) {

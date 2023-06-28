@@ -4,18 +4,15 @@ import (
 	"os"
 	"testing"
 
-	"github.com/aporeto-inc/trireme"
-	"github.com/aporeto-inc/trireme/collector"
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/enforcer"
-	"github.com/aporeto-inc/trireme/enforcer/proxy"
-	"github.com/aporeto-inc/trireme/enforcer/utils/rpcwrapper"
-	"github.com/aporeto-inc/trireme/enforcer/utils/secrets"
-	"github.com/aporeto-inc/trireme/monitor"
-	"github.com/aporeto-inc/trireme/monitor/dockermonitor"
-	"github.com/aporeto-inc/trireme/supervisor"
-	"github.com/aporeto-inc/trireme/supervisor/proxy"
-	. "github.com/smartystreets/goconvey/convey"
+	"github.com/headingy/trireme"
+	"github.com/headingy/trireme/collector"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/enforcer"
+	"github.com/headingy/trireme/enforcer/utils/rpcwrapper"
+	"github.com/headingy/trireme/enforcer/utils/secrets"
+	"github.com/headingy/trireme/monitor"
+	"github.com/headingy/trireme/monitor/dockermonitor"
+	"github.com/headingy/trireme/supervisor"
 )
 
 var (

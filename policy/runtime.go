@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"sync"
 
-	"github.com/aporeto-inc/trireme/constants"
+	"github.com/headingy/trireme/constants"
 )
 
 // PURuntime holds all data related to the status of the container run time
@@ -198,7 +198,7 @@ func (r *PURuntime) Tag(key string) (string, bool) {
 	return tag, ok
 }
 
-//Tags returns tags for the processing unit
+// Tags returns tags for the processing unit
 func (r *PURuntime) Tags() *TagStore {
 	r.Lock()
 	defer r.Unlock()

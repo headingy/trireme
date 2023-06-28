@@ -1,6 +1,6 @@
 package supervisor
 
-import "github.com/aporeto-inc/trireme/policy"
+import "github.com/headingy/trireme/policy"
 
 // A Supervisor is implementing the node control plane that captures the packets.
 type Supervisor interface {

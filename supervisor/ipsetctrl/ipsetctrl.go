@@ -6,10 +6,10 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/enforcer/utils/fqconfig"
-	"github.com/aporeto-inc/trireme/policy"
-	"github.com/aporeto-inc/trireme/supervisor/provider"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/enforcer/utils/fqconfig"
+	"github.com/headingy/trireme/policy"
+	"github.com/headingy/trireme/supervisor/provider"
 )
 
 const (
@@ -43,13 +43,13 @@ func NewInstance(fqc *fqconfig.FilterQueue, remote bool, mode constants.ModeType
 	ips := provider.NewGoIPsetProvider()
 
 	i := &Instance{
-		fqc: fqc,
-		ipt: ipt,
-		ips: ips,
+		fqc:                        fqc,
+		ipt:                        ipt,
+		ips:                        ips,
 		appPacketIPTableContext:    "raw",
 		appAckPacketIPTableContext: "mangle",
 		netPacketIPTableContext:    "mangle",
-		mode: mode,
+		mode:                       mode,
 	}
 
 	if remote {

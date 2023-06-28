@@ -9,7 +9,7 @@
 // data.
 package policy
 
-import "github.com/aporeto-inc/trireme/constants"
+import "github.com/headingy/trireme/constants"
 
 // A RuntimeReader allows to get the specific parameters stored in the Runtime
 type RuntimeReader interface {

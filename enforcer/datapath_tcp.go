@@ -9,12 +9,12 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/aporeto-inc/trireme/cache"
-	"github.com/aporeto-inc/trireme/collector"
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/enforcer/utils/packet"
-	"github.com/aporeto-inc/trireme/enforcer/utils/tokens"
-	"github.com/aporeto-inc/trireme/policy"
+	"github.com/headingy/trireme/cache"
+	"github.com/headingy/trireme/collector"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/enforcer/utils/packet"
+	"github.com/headingy/trireme/enforcer/utils/tokens"
+	"github.com/headingy/trireme/policy"
 )
 
 // processNetworkPackets processes packets arriving from network and are destined to the application

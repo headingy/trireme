@@ -6,9 +6,9 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/aporeto-inc/trireme/monitor/dockermonitor"
-	"github.com/aporeto-inc/trireme/policy"
 	"github.com/docker/docker/api/types"
+	"github.com/headingy/trireme/monitor/dockermonitor"
+	"github.com/headingy/trireme/policy"
 )
 
 // NewExternalExtractor returns a new bash metadata extractor for Docker that will call

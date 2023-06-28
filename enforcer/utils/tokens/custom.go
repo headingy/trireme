@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/aporeto-inc/trireme/crypto"
-	"github.com/aporeto-inc/trireme/policy"
+	"github.com/headingy/trireme/crypto"
+	"github.com/headingy/trireme/policy"
 )
 
 // CustomTokenSignMethod describes the sign methods for the custome tokens

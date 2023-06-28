@@ -5,11 +5,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/aporeto-inc/trireme/crypto"
-	"github.com/aporeto-inc/trireme/enforcer/utils/secrets"
-	"github.com/aporeto-inc/trireme/policy"
 	jwt "github.com/dgrijalva/jwt-go"
-	. "github.com/smartystreets/goconvey/convey"
+	"github.com/headingy/trireme/crypto"
+	"github.com/headingy/trireme/enforcer/utils/secrets"
+	"github.com/headingy/trireme/policy"
 )
 
 var (

@@ -12,12 +12,12 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/aporeto-inc/trireme/collector"
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/monitor"
-	"github.com/aporeto-inc/trireme/monitor/contextstore"
-	"github.com/aporeto-inc/trireme/monitor/linuxmonitor/cgnetcls"
-	"github.com/aporeto-inc/trireme/policy"
+	"github.com/headingy/trireme/collector"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/monitor"
+	"github.com/headingy/trireme/monitor/contextstore"
+	"github.com/headingy/trireme/monitor/linuxmonitor/cgnetcls"
+	"github.com/headingy/trireme/policy"
 )
 
 // RPCMetadataExtractor is a function used to extract a *policy.PURuntime from a given

@@ -6,12 +6,12 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/enforcer/utils/fqconfig"
-	"github.com/aporeto-inc/trireme/monitor/linuxmonitor/cgnetcls"
-	"github.com/aporeto-inc/trireme/policy"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/enforcer/utils/fqconfig"
+	"github.com/headingy/trireme/monitor/linuxmonitor/cgnetcls"
+	"github.com/headingy/trireme/policy"
 
-	"github.com/aporeto-inc/trireme/supervisor/provider"
+	"github.com/headingy/trireme/supervisor/provider"
 )
 
 const (
@@ -55,13 +55,13 @@ func NewInstance(fqc *fqconfig.FilterQueue, mode constants.ModeType) (*Instance,
 	}
 
 	i := &Instance{
-		fqc:   fqc,
-		ipt:   ipt,
-		ipset: ips,
+		fqc:                        fqc,
+		ipt:                        ipt,
+		ipset:                      ips,
 		appPacketIPTableContext:    "raw",
 		appAckPacketIPTableContext: "mangle",
 		netPacketIPTableContext:    "mangle",
-		mode: mode,
+		mode:                       mode,
 	}
 
 	if mode == constants.LocalServer || mode == constants.RemoteContainer {

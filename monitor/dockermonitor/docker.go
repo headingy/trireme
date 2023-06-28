@@ -12,16 +12,16 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/aporeto-inc/trireme/collector"
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/monitor"
-	"github.com/aporeto-inc/trireme/policy"
 	"github.com/dchest/siphash"
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/api/types/events"
 	"github.com/docker/docker/api/types/filters"
+	"github.com/headingy/trireme/collector"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/monitor"
+	"github.com/headingy/trireme/policy"
 
-	"github.com/aporeto-inc/trireme/monitor/linuxmonitor/cgnetcls"
+	"github.com/headingy/trireme/monitor/linuxmonitor/cgnetcls"
 
 	dockerClient "github.com/docker/docker/client"
 )
@@ -214,7 +214,7 @@ func NewDockerMonitor(
 		syncAtStart:                syncAtStart,
 		syncHandler:                s,
 		killContainerOnPolicyError: killContainerOnPolicyError,
-		netcls: cgnetcls.NewDockerCgroupNetController(),
+		netcls:                     cgnetcls.NewDockerCgroupNetController(),
 	}
 
 	d.numberOfQueues = runtime.NumCPU() * 8
@@ -542,8 +542,8 @@ func (d *dockerMonitor) handleCreateEvent(event *events.Message) error {
 }
 
 // handleStartEvent will notify the agent immediately about the event in order
-//to start the implementation of the functions. The agent must query
-//the policy engine for details on what to do with this container.
+// to start the implementation of the functions. The agent must query
+// the policy engine for details on what to do with this container.
 func (d *dockerMonitor) handleStartEvent(event *events.Message) error {
 
 	timeout := time.Second * 0
@@ -577,7 +577,7 @@ func (d *dockerMonitor) handleStartEvent(event *events.Message) error {
 	return d.startDockerContainer(&info)
 }
 
-//handleDie event is called when a container dies. It generates a "Stop" event.
+// handleDie event is called when a container dies. It generates a "Stop" event.
 func (d *dockerMonitor) handleDieEvent(event *events.Message) error {
 
 	return d.stopDockerContainer(event.ID)

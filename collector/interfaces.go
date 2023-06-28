@@ -3,7 +3,7 @@ package collector
 import (
 	"fmt"
 
-	"github.com/aporeto-inc/trireme/policy"
+	"github.com/headingy/trireme/policy"
 )
 
 const (

@@ -3,8 +3,7 @@ package policy
 import (
 	"testing"
 
-	"github.com/aporeto-inc/trireme/constants"
-	. "github.com/smartystreets/goconvey/convey"
+	"github.com/headingy/trireme/constants"
 )
 
 func TestNewPolicy(t *testing.T) {

@@ -1,10 +1,11 @@
+//go:build !linux
 // +build !linux
 
 package remoteenforcer
 
 import (
-	"github.com/aporeto-inc/trireme/enforcer"
-	"github.com/aporeto-inc/trireme/enforcer/utils/rpcwrapper"
+	"github.com/headingy/trireme/enforcer"
+	"github.com/headingy/trireme/enforcer/utils/rpcwrapper"
 )
 
 // Server is a fake implementation for building on darwin.

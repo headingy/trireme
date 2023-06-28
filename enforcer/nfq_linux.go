@@ -1,3 +1,4 @@
+//go:build linux
 // +build linux
 
 package enforcer
@@ -7,8 +8,8 @@ import (
 	"fmt"
 	"strconv"
 
-	nfqueue "github.com/aporeto-inc/netlink-go/nfqueue"
-	"github.com/aporeto-inc/trireme/enforcer/utils/packet"
+	"github.com/headingy/trireme/enforcer/utils/packet"
+	nfqueue "go.aporeto.io/netlink-go/nfqueue"
 	"go.uber.org/zap"
 )
 

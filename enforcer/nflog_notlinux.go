@@ -1,8 +1,9 @@
+//go:build darwin || !linux
 // +build darwin !linux
 
 package enforcer
 
-import "github.com/aporeto-inc/trireme/collector"
+import "github.com/headingy/trireme/collector"
 
 // nfLog TODO
 type nfLog struct {

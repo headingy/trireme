@@ -16,9 +16,9 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/aporeto-inc/trireme/cache"
-	"github.com/aporeto-inc/trireme/crypto"
-	"github.com/aporeto-inc/trireme/enforcer/utils/rpcwrapper"
+	"github.com/headingy/trireme/cache"
+	"github.com/headingy/trireme/crypto"
+	"github.com/headingy/trireme/enforcer/utils/rpcwrapper"
 	"github.com/kardianos/osext"
 )
 
@@ -27,14 +27,14 @@ var (
 	GlobalCommandArgs map[string]interface{}
 )
 
-//ProcessMon exported
+// ProcessMon exported
 type ProcessMon struct {
 	activeProcesses *cache.Cache
 }
 
 var launcher *ProcessMon
 
-//ProcessInfo exported
+// ProcessInfo exported
 type processInfo struct {
 	contextID string
 	RPCHdl    rpcwrapper.RPCClient
@@ -42,9 +42,9 @@ type processInfo struct {
 	deleted   bool
 }
 
-//ExitStatus captures the exit status of a process
-//The contextID is optional and is primarily used by remote enforcer processes
-//and represents the namespace in which the process was running
+// ExitStatus captures the exit status of a process
+// The contextID is optional and is primarily used by remote enforcer processes
+// and represents the namespace in which the process was running
 type ExitStatus struct {
 	process    int
 	contextID  string
@@ -66,7 +66,7 @@ var ErrFailedtoLaunch = errors.New("Failed to launch enforcer")
 // ErrProcessDoesNotExists Exported
 var ErrProcessDoesNotExists = errors.New("Process in that context does not exist")
 
-//ErrBinaryNotFound Exported
+// ErrBinaryNotFound Exported
 var ErrBinaryNotFound = errors.New("Enforcer Binary not found")
 
 func init() {
@@ -75,7 +75,7 @@ func init() {
 	go collectChildExitStatus()
 }
 
-//collectChildExitStatus is an async function which collects status for all launched child processes
+// collectChildExitStatus is an async function which collects status for all launched child processes
 func collectChildExitStatus() {
 
 	for {
@@ -101,14 +101,14 @@ func processIOReader(fd io.Reader, contextID string, exited chan int) {
 	}
 }
 
-//SetnsNetPath -- only planned consumer is unit test
-//Call this function if you expect network namespace links to be created in a separate path
+// SetnsNetPath -- only planned consumer is unit test
+// Call this function if you expect network namespace links to be created in a separate path
 func (p *ProcessMon) SetnsNetPath(netpath string) {
 
 	netnspath = netpath
 }
 
-//GetExitStatus reports if the process is marked for deletion or deleted
+// GetExitStatus reports if the process is marked for deletion or deleted
 func (p *ProcessMon) GetExitStatus(contextID string) bool {
 
 	s, err := p.activeProcesses.Get(contextID)
@@ -119,7 +119,7 @@ func (p *ProcessMon) GetExitStatus(contextID string) bool {
 	return (s.(*processInfo)).deleted
 }
 
-//SetExitStatus marks the process for deletion
+// SetExitStatus marks the process for deletion
 func (p *ProcessMon) SetExitStatus(contextID string, status bool) error {
 
 	s, err := p.activeProcesses.Get(contextID)
@@ -133,7 +133,7 @@ func (p *ProcessMon) SetExitStatus(contextID string, status bool) error {
 	return nil
 }
 
-//KillProcess sends a rpc to the process to exit failing which it will kill the process
+// KillProcess sends a rpc to the process to exit failing which it will kill the process
 func (p *ProcessMon) KillProcess(contextID string) {
 
 	s, err := p.activeProcesses.Get(contextID)
@@ -178,7 +178,7 @@ func (p *ProcessMon) KillProcess(contextID string) {
 	}
 }
 
-//LaunchProcess prepares the environment for the new process and launches the process
+// LaunchProcess prepares the environment for the new process and launches the process
 func (p *ProcessMon) LaunchProcess(contextID string, refPid int, rpchdl rpcwrapper.RPCClient, arg string, statsServerSecret string, procMountPoint string) error {
 	secretLength := 32
 	var cmdName string
@@ -296,16 +296,16 @@ func (p *ProcessMon) LaunchProcess(contextID string, refPid int, rpchdl rpcwrapp
 	return nil
 }
 
-//NewProcessMon is a method to create a new processmon
+// NewProcessMon is a method to create a new processmon
 func newProcessMon() ProcessManager {
 
 	launcher = &ProcessMon{activeProcesses: cache.NewCache()}
 	return launcher
 }
 
-//GetProcessManagerHdl will ensure that we return an existing handle if one has been created.
-//or return a new one if there is none
-//This needs locks
+// GetProcessManagerHdl will ensure that we return an existing handle if one has been created.
+// or return a new one if there is none
+// This needs locks
 func GetProcessManagerHdl() ProcessManager {
 
 	if launcher == nil {

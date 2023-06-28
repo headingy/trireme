@@ -1,8 +1,8 @@
 package rpcmonitor
 
 import (
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/monitor"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/monitor"
 )
 
 const (

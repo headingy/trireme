@@ -1,10 +1,10 @@
 package enforcer
 
 import (
-	"github.com/aporeto-inc/trireme/collector"
-	"github.com/aporeto-inc/trireme/enforcer/lookup"
-	"github.com/aporeto-inc/trireme/enforcer/utils/packet"
-	"github.com/aporeto-inc/trireme/policy"
+	"github.com/headingy/trireme/collector"
+	"github.com/headingy/trireme/enforcer/lookup"
+	"github.com/headingy/trireme/enforcer/utils/packet"
+	"github.com/headingy/trireme/policy"
 )
 
 func (d *Datapath) reportFlow(p *packet.Packet, connection *TCPConnection, sourceID string, destID string, context *PUContext, mode string, plc *policy.FlowPolicy) {

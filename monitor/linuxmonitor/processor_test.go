@@ -4,16 +4,13 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/aporeto-inc/trireme/collector"
-	"github.com/aporeto-inc/trireme/constants"
-	"github.com/aporeto-inc/trireme/mock"
-	"github.com/aporeto-inc/trireme/monitor"
-	"github.com/aporeto-inc/trireme/monitor/contextstore"
-	"github.com/aporeto-inc/trireme/monitor/linuxmonitor/cgnetcls"
-	"github.com/aporeto-inc/trireme/monitor/linuxmonitor/cgnetcls/mock"
-	"github.com/aporeto-inc/trireme/monitor/rpcmonitor"
 	"github.com/golang/mock/gomock"
-	. "github.com/smartystreets/goconvey/convey"
+	"github.com/headingy/trireme/collector"
+	"github.com/headingy/trireme/constants"
+	"github.com/headingy/trireme/monitor"
+	"github.com/headingy/trireme/monitor/contextstore"
+	"github.com/headingy/trireme/monitor/linuxmonitor/cgnetcls"
+	"github.com/headingy/trireme/monitor/rpcmonitor"
 )
 
 func testLinuxProcessor(collector collector.EventCollector, puHandler monitor.ProcessingUnitsHandler, metadataExtractor rpcmonitor.RPCMetadataExtractor, releasePath string) *LinuxProcessor {

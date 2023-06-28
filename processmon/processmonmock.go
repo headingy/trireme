@@ -4,7 +4,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/aporeto-inc/trireme/enforcer/utils/rpcwrapper"
+	"github.com/headingy/trireme/enforcer/utils/rpcwrapper"
 )
 
 type mockedMethods struct {

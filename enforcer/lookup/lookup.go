@@ -7,7 +7,7 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/aporeto-inc/trireme/policy"
+	"github.com/headingy/trireme/policy"
 )
 
 // ForwardingPolicy is an instance of the forwarding policy
@@ -21,7 +21,7 @@ type ForwardingPolicy struct {
 // intList is a list of integeres
 type intList []int
 
-//PolicyDB is the structure of a policy
+// PolicyDB is the structure of a policy
 type PolicyDB struct {
 	// rules    []policy
 	numberOfPolicies       int
@@ -32,7 +32,7 @@ type PolicyDB struct {
 	defaultNotExistsPolicy *ForwardingPolicy
 }
 
-//NewPolicyDB creates a new PolicyDB for efficient search of policies
+// NewPolicyDB creates a new PolicyDB for efficient search of policies
 func NewPolicyDB() (m *PolicyDB) {
 
 	m = &PolicyDB{
@@ -74,7 +74,7 @@ func (array intList) sortedInsert(value int) intList {
 
 }
 
-//AddPolicy adds a policy to the database
+// AddPolicy adds a policy to the database
 func (m *PolicyDB) AddPolicy(selector policy.TagSelector) (policyID int) {
 
 	// Create a new policy object
@@ -151,7 +151,7 @@ func (m *PolicyDB) keyValueFromString(tag string) (key, value string) {
 	return parts[0], parts[1]
 }
 
-//Search searches for a set of tags in the database to find a policy match
+// Search searches for a set of tags in the database to find a policy match
 func (m *PolicyDB) Search(tags *policy.TagStore) (int, interface{}) {
 
 	count := make([]int, m.numberOfPolicies+1)

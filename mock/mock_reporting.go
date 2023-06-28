@@ -4,8 +4,8 @@
 package mock_trireme
 
 import (
-	gomock "github.com/aporeto-inc/mock/gomock"
-	collector "github.com/aporeto-inc/trireme/collector"
+	gomock "github.com/golang/mock/gomock"
+	collector "github.com/headingy/trireme/collector"
 )
 
 // Mock of EventCollector interface

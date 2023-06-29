@@ -9,7 +9,7 @@ require (
 	github.com/coreos/go-iptables v0.6.0
 	github.com/dchest/siphash v1.2.3
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
-	github.com/docker/docker v24.0.2+incompatible
+	github.com/docker/docker v1.13.0
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/golang/mock v1.6.0
 	github.com/google/gopacket v1.1.19

@@ -39,9 +39,9 @@ Trireme is a node-centric library.  Each node participating in the Trireme clust
 
 * [This example ](https://github.com/headingy/trireme-example) is a straightforward implementation of the PolicyLogic for a simple use-case.
 
-* [Kubernetes-Integration ] (https://github.com/aporeto-inc/kubernetes-integration) is a full implementation of PolicyLogic that follows the Kubernetes Network Policies model.
+* [Kubernetes-Integration](https://github.com/aporeto-inc/kubernetes-integration) is a full implementation of PolicyLogic that follows the Kubernetes Network Policies model.
 
-* [Bare-Metal-Integration] (https://github.com/headingy/trireme-bare-metal) is an implementation of Trireme for Kubernetes on-Prem, with a Cumulus agent that allows you to have a very simple networking model (routes are advertised by Cumulus) together with Trireme for policy enforcement.
+* [Bare-Metal-Integration](https://github.com/headingy/trireme-bare-metal) is an implementation of Trireme for Kubernetes on-Prem, with a Cumulus agent that allows you to have a very simple networking model (routes are advertised by Cumulus) together with Trireme for policy enforcement.
 
 
 # Security Model

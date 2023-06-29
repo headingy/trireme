@@ -4,7 +4,7 @@
 package mockrpcwrapper
 
 import (
-	gomock "github.com/aporeto-inc/mock/gomock"
+	gomock "github.com/golang/mock/gomock"
 	rpcwrapper "github.com/headingy/trireme/enforcer/utils/rpcwrapper"
 )
 

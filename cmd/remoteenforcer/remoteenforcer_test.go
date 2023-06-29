@@ -8,9 +8,11 @@ import (
 	"testing"
 	"time"
 
+	. "github.com/smartystreets/goconvey/convey"
+
 	"github.com/cnf/structhash"
 
-	gomock "github.com/aporeto-inc/mock/gomock"
+	gomock "github.com/golang/mock/gomock"
 	"github.com/headingy/trireme/collector"
 	"github.com/headingy/trireme/constants"
 	"github.com/headingy/trireme/enforcer"

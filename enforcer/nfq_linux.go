@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"strconv"
 
+	nfqueue "github.com/aporeto-inc/netlink-go/nfqueue"
 	"github.com/headingy/trireme/enforcer/utils/packet"
-	nfqueue "go.aporeto.io/netlink-go/nfqueue"
 	"go.uber.org/zap"
 )
 

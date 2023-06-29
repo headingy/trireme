@@ -5,6 +5,8 @@ import (
 	"testing"
 	"time"
 
+	. "github.com/smartystreets/goconvey/convey"
+
 	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/headingy/trireme/crypto"
 	"github.com/headingy/trireme/enforcer/utils/secrets"

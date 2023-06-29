@@ -8,6 +8,8 @@ import (
 	"net"
 	"testing"
 
+	. "github.com/smartystreets/goconvey/convey"
+
 	"github.com/headingy/trireme/monitor/rpcmonitor"
 )
 

@@ -5,6 +5,8 @@ import (
 	"crypto/x509"
 	"testing"
 
+	. "github.com/smartystreets/goconvey/convey"
+
 	"github.com/headingy/trireme/crypto"
 )
 

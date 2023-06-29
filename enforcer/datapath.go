@@ -9,6 +9,7 @@ import (
 
 	"go.uber.org/zap"
 
+	"github.com/aporeto-inc/netlink-go/conntrack"
 	"github.com/headingy/trireme/cache"
 	"github.com/headingy/trireme/collector"
 	"github.com/headingy/trireme/constants"
@@ -18,7 +19,6 @@ import (
 	"github.com/headingy/trireme/enforcer/utils/tokens"
 	"github.com/headingy/trireme/monitor/linuxmonitor/cgnetcls"
 	"github.com/headingy/trireme/policy"
-	"go.aporeto.io/netlink-go/conntrack"
 )
 
 // Datapath is the structure holding all information about a connection filter

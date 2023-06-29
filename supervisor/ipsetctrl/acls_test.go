@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"testing"
 
+	. "github.com/smartystreets/goconvey/convey"
+
 	"github.com/bvandewalle/go-ipset/ipset"
 	"github.com/headingy/trireme/constants"
 	"github.com/headingy/trireme/enforcer/utils/fqconfig"

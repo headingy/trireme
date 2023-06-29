@@ -3,6 +3,8 @@ package policy
 import (
 	"testing"
 
+	. "github.com/smartystreets/goconvey/convey"
+
 	"github.com/headingy/trireme/constants"
 )
 

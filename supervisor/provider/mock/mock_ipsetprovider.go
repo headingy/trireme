@@ -5,7 +5,7 @@
 package mockprovider
 
 import (
-	gomock "github.com/aporeto-inc/mock/gomock"
+	gomock "github.com/golang/mock/gomock"
 	ipset "github.com/bvandewalle/go-ipset/ipset"
 	provider "github.com/headingy/trireme/supervisor/provider"
 )

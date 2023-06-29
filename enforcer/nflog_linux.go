@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/aporeto-inc/netlink-go/nflog"
 	"github.com/headingy/trireme/collector"
 	"github.com/headingy/trireme/policy"
-	"go.aporeto.io/netlink-go/nflog"
 
 	"go.uber.org/zap"
 )
